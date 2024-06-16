@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 2</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <style>
+      .normal {
+        color: green;
+      }
+      .alerta {
+        color: orange;
+      }
+      .perigo {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Atividade 2</h1>
+      <p>
+        O programa deve calcular o IMC e mostrar o valor obtido.
+        <br />
+        Usando a instrução if e a tabela do IMC, mostre qual é a situação do
+        usuário de acordo com o IMC calculado.
+        <br />
+        Use CSS para mudar a cor da situação para indicar normalidade (verde),
+        alerta (laranja: acima ou abaixo do peso) ou perigo (vermelho: muito
+        abaixo/Obesidade I, Obesidade II, Obesidade III).
+      </p>
+      <hr />
+      <p>Peso (kg): <input type="number" id="peso" /></p>
+      <p>Altura (m): <input type="number" id="altura" step="0.01" /></p>
+      <button onclick="calcularIMC()">Calcular IMC</button>
+
+      <p>IMC: <span id="imc"></span></p>
+      <p>Situação: <span id="situacao"></span></p>
+      <hr />
+      <a href="../index.html" class="buttonVoltar">Voltar para o Início</a>
+    </section>
+    <script>
+      function calcularIMC() {
+        const peso = parseFloat(document.getElementById("peso").value);
+        const altura = parseFloat(document.getElementById("altura").value);
+        const imc = peso / (altura * altura);
+        let situacao, cor;
+
+        if (imc < 18.5) {
+          situacao = "Abaixo do peso";
+          cor = "alerta";
+        } else if (imc >= 18.5 && imc <= 24.9) {
+          situacao = "Peso normal";
+          cor = "normal";
+        } else if (imc >= 25 && imc <= 29.9) {
+          situacao = "Sobrepeso";
+          cor = "alerta";
+        } else if (imc >= 30 && imc <= 34.9) {
+          situacao = "Obesidade grau I";
+          cor = "perigo";
+        } else if (imc >= 35 && imc <= 39.9) {
+          situacao = "Obesidade grau II";
+          cor = "perigo";
+        } else {
+          situacao = "Obesidade grau III ou mórbida";
+          cor = "perigo";
+        }
+
+        document.getElementById("imc").innerHTML = imc.toFixed(2);
+        document.getElementById("situacao").className = cor;
+        document.getElementById("situacao").innerHTML = situacao;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #313131;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    padding: 2rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+hr{
+    margin: 0.5rem 0;
+    border-color: #222;
+}
+
+.container {
+    max-width: 800px;
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #222;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 1rem;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #222;
+    padding: 0 .5rem;
+}
+
+.animatedList {
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.animatedList li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 15px;
+    transition: .3s;
+}
+
+.animatedList li::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    background-color: #fff;
+    display: inline-block;
+    left: -15px;
+    transition: .3s;
+}
+
+.animatedList li:hover {
+    margin-left: 30px;
+}
+
+.animatedList li:hover::before {
+    left: -30px;
+    width: 23px;
+}
+
+.atividadesContainer {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.atividade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    gap: .5rem;
+    flex: 1 1 200px;
+    border: 1px solid #313131;
+    transition: .3s;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.atividade:hover {
+    transform: scale(1.05);
+}
+
+.atividade h3 {
+    font-size: 1.2rem;
+}
+
+.atividade a, .buttonVoltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #eee;
+    padding: .5rem 1rem;
+    border: 1px solid #313131;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.atividade a::after {
+    content: '';    
+    margin-left: 5px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('./double_arrow.png') no-repeat center center / contain;
+}
+
+.atividade a:hover, .buttonVoltar:hover {
+    background-color: #313131;
+}

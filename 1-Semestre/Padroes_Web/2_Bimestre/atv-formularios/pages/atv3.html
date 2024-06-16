@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 3</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <style>
+      .vermelho {
+        color: red;
+      }
+      .azul {
+        color: blue;
+      }
+      .verde {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Atividade 3</h1>
+      <p>
+        Estude o exemplo sobre "appendChild" que está no site w3schools<br />
+        <br />
+        Faça as seguintes alterações:<br />
+        <br />
+        - acrescente uma tag <code>&lt;input&gt;</code> para informar o texto do
+        item da lista a incluir. Use o atributo 'value' para recuperar o valor
+        digitado.<br />
+        <br />
+        - acrescente três botões de rádio para escolher a cor do item da lista.
+        Fique a vontade para escolher as cores<br />
+        <br />
+        - Use o método "<code>addEventListener()</code>" para substituir a
+        chamada da função "myFunction()" diretamente no atributo "onclick",<br />
+        <br />
+      </p>
+      <hr />
+      <p>Texto do item: <input type="text" id="textoItem" /></p>
+
+      <p>Cor do item:</p>
+      <input type="radio" id="vermelho" name="cores" value="vermelho" checked/>
+      <label for="vermelho">Vermelho</label><br />
+      <input type="radio" id="azul" name="cores" value="azul" />
+      <label for="azul">Azul</label><br />
+      <input type="radio" id="verde" name="cores" value="verde" />
+      <label for="verde">Verde</label><br />
+
+      <button id="adicionarItem">Adicionar Item</button>
+
+      <ul id="minhaLista">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+      </ul>
+      <hr />
+      <a href="../index.html" class="buttonVoltar">Voltar para o Início</a>
+    </section>
+    <script>
+      document
+        .getElementById("adicionarItem")
+        .addEventListener("click", function () {
+          const texto = document.getElementById("textoItem").value;
+          var cor = document.querySelector('input[name="cores"]:checked').value;
+          var li = document.createElement("li");
+          li.textContent = texto;
+          li.className = cor;
+          li.style.backgroundColor = '#fff';
+          document.getElementById("minhaLista").appendChild(li);
+        });
+    </script>
+  </body>
+</html>

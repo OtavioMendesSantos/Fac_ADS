@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Atividade 1</h1>
+      <p>"Calcule a média aritmética. Use media = (nota1+nota2)/2</p>
+      <p>
+        Se a media for maior ou igual a 6 a situação será APROVADO e deve ser
+        exibida na cor AZUL, senão a situação será REPROVADO e deve ser exibida
+        na cor VERMELHA"
+      </p>
+      <h2>Versão 1 - (Com Prompt)</h2>
+      <p>Média: <span id="promptMedia"></span></p>
+      <p>Situação: <span id="promptSituacao"></span></p>
+
+      <h2>Versão 2 - (Com Input)</h2>
+      <p>Nota 1: <input type="number" id="nota1" /></p>
+      <p>Nota 2: <input type="number" id="nota2" /></p>
+      <button onclick="calcularMedia()">Calcular Média</button>
+      <p>Média: <span id="media"></span></p>
+      <p>Situação: <span id="situacao"></span></p>
+      <hr>
+      <a href="../index.html" class="buttonVoltar">Voltar para o Início</a>
+    </section>
+    <script async>
+      // Versão 1 - (Com Prompt)
+      function calcularMediaPrompt() {
+        const nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        const nota2 = parseFloat(prompt("Digite a segunda nota:"));
+        const media = (nota1 + nota2) / 2;
+        let situacao = "";
+        let cor = "";
+
+        if (media >= 6) {
+          situacao = "Aprovado";
+          cor = "blue";
+        } else {
+          situacao = "Reprovado";
+          cor = "red";
+        }
+
+        document.getElementById("promptMedia").innerHTML = media;
+        document.getElementById("promptSituacao").style.backgroundColor = "#fff";
+        document.getElementById("promptSituacao").style.color = cor;
+        document.getElementById("promptSituacao").innerHTML = situacao;
+      }
+      calcularMediaPrompt()
+
+      // Versão 2 - (Com Input)
+      function calcularMedia() {
+        const nota1 = parseFloat(document.getElementById("nota1").value);
+        const nota2 = parseFloat(document.getElementById("nota2").value);
+        const media = (nota1 + nota2) / 2;
+        let situacao = "";
+        let cor = "";
+
+        if (media >= 6) {
+          situacao = "Aprovado";
+          cor = "blue";
+        } else {
+          situacao = "Reprovado";
+          cor = "red";
+        }
+
+        document.getElementById("media").innerHTML = media.toFixed(2);
+        document.getElementById("situacao").style.color = cor;
+        document.getElementById("situacao").style.backgroundColor = "#fff";
+        document.getElementById("situacao").innerHTML = situacao;
+      }
+    </script>
+  </body>
+</html>
