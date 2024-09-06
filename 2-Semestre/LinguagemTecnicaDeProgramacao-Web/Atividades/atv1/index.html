@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1</title>
+    <style>
+      * {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .grid {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+      .container {
+        background-color: orange;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .response {
+        background-color: rgb(83, 82, 78);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 300px;
+        width: 100%;
+        margin: 10px auto;
+      }
+
+      .response p {
+        margin: 0 0 0 0.5rem;
+      }
+
+      .bloco {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="response">
+        <p>Aluno: Otávio Mendes Santos</p>
+        <p>Curso: Análise e Desenvolvimento de Sistemas</p>
+        <p>Disciplina: Linguagem de Programação Web1 (JavaScript)</p>
+      </div>
+      <div class="container">
+        <h1>Calculadora de Salário Líquido</h1>
+        <div class="bloco">
+          <label for="horas">Horas Trabalhadas</label>
+          <input
+            type="number"
+            id="horas"
+            min="135"
+            max="180"
+            placeholder="135-180"
+          />
+        </div>
+        <div class="bloco">
+          <label for="hora">Valor por Hora</label>
+          <input
+            type="number"
+            id="hora"
+            min="25"
+            max="50"
+            placeholder="25-50"
+          />
+        </div>
+        <div class="bloco">
+          <label for="desconto">Desconto Inss</label>
+          <input
+            type="number"
+            id="desconto"
+            min="5"
+            max="15"
+            placeholder="5-15"
+          />
+        </div>
+        <input type="submit" value="Calcular" id="calcular" />
+      </div>
+      <div id="result" class="response"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
